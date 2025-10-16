@@ -1,0 +1,29 @@
+// Shared button styles for beginners
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 30px;
+    border: 0;
+    border-radius: $border-radius;
+    font-weight: bold;
+    font-size: $spacing-small;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity $transition-speed;
+}
+
+.btn--primary {
+    background-color: $red;
+    color: $white;
+}
+
+.btn--secondary {
+    background-color: $light-blue;
+    color: $black;
+}
+
+.btn--lg {
+    width: 308px;
+    height: 66px;
+}

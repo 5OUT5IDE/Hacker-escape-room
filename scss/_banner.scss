@@ -1,0 +1,31 @@
+// Banner component
+.banner {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 400px;
+    margin: 0;
+    padding: 0;
+
+    &__image {
+        width: 100%;
+        height: auto;
+        max-height: 600px;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__buttons {
+        position: absolute;
+        bottom: -33px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: $spacing-small;
+    }
+
+    
+}

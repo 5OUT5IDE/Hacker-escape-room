@@ -1,0 +1,61 @@
+// Footer component
+.footer {
+    width: 100%;
+    background-color: $dark-blue;
+    padding: $spacing-large $spacing-medium 30px $spacing-medium;
+    color: $white;
+    margin: 0;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        max-width: $max-width-content;
+        margin: 0 auto $spacing-medium auto;
+        gap: $spacing-large;
+    }
+
+    &__column {
+        flex: 1;
+
+        &--main {
+            flex: 2;
+            max-width: $max-width-footer-text;
+        }
+    }
+
+    &__heading {
+        font-size: $font-size-large;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: $white;
+    }
+
+    &__column--main &__heading {
+        font-size: $spacing-small;
+    }
+
+    &__text {
+        font-size: $font-size-small;
+        line-height: 1.6;
+        color: $white;
+        margin: 0;
+    }
+
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__item {
+        margin-bottom: 10px;
+    }
+
+    &__link {
+        color: $white;
+        text-decoration: none;
+        font-size: $font-size-small;
+        transition: color $transition-speed;
+
+    }
+}

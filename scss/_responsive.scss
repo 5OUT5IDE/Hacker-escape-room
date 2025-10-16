@@ -1,0 +1,178 @@
+// Responsive styles
+@media (max-width: 1280px) {
+    .challenges__card {
+        width: 320px;
+        height: auto;
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 15px $spacing-small;
+        position: relative;
+        z-index: 100;
+
+        &__nav {
+            position: static;
+            background: $dark-blue;
+            flex-direction: column;
+            gap: 0;
+            padding: 10px 0;
+            max-height: none;
+            overflow: visible;
+            box-shadow: none;
+        }
+
+        &__nav-link {
+            padding: 12px $spacing-small;
+            font-size: $spacing-small;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: block;
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+
+        &__title {
+            font-size: 24px;
+        }
+
+        &__logo {
+            height: 50px;
+        }
+    }
+
+    .banner {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+
+        &__image {
+            max-height: 300px;
+            object-fit: cover;
+        }
+
+        &__buttons {
+            flex-direction: column;
+            gap: 10px;
+            bottom: -80px;
+        }
+
+        &__button {
+            width: 250px;
+            height: 55px;
+            font-size: $font-size-base;
+        }
+    }
+
+    .reviews {
+        flex-direction: column;
+        gap: 30px;
+        padding: 100px $spacing-small $spacing-medium $spacing-small;
+
+        &__image {
+            width: 60px;
+            height: 60px;
+        }
+
+        &__text {
+            font-size: $font-size-small;
+        }
+
+        &__author {
+            font-size: 12px;
+        }
+    }
+
+    .challenges {
+        padding: $spacing-medium $spacing-small;
+
+        &__title {
+            font-size: 24px;
+        }
+
+        &__container {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__card {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+        }
+
+        &__image {
+            height: 200px;
+        }
+
+        &__card-title {
+            font-size: $font-size-large;
+        }
+
+        &__description {
+            font-size: 13px;
+        }
+    }
+
+    .story {
+        padding: $spacing-medium $spacing-small;
+
+        &__text {
+            font-size: $font-size-base;
+            max-width: 100%;
+        }
+    }
+
+    .info-section {
+        flex-direction: column;
+        height: auto;
+        min-height: auto;
+
+        &--reverse {
+            flex-direction: column-reverse;
+        }
+
+        &__image-wrapper,
+        &__content {
+            width: 100%;
+        }
+
+        &__image-wrapper {
+            height: 300px;
+            min-height: 300px;
+        }
+
+        &__content {
+            padding: $spacing-medium $spacing-small;
+        }
+
+        &__title {
+            font-size: 24px;
+        }
+
+        &__text {
+            font-size: $font-size-base;
+        }
+
+        &__button {
+            width: 100%;
+            max-width: 250px;
+        }
+    }
+
+    .footer {
+        padding: $spacing-medium $spacing-small $spacing-small $spacing-small;
+
+        &__container {
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        &__column--main {
+            max-width: 100%;
+        }
+    }
+}

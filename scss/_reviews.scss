@@ -1,0 +1,44 @@
+// Reviews component (flattened for beginners)
+.reviews {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    padding: 120px $spacing-medium $spacing-large $spacing-medium;
+    max-width: $max-width-reviews;
+    margin: 0 auto;
+}
+
+.reviews__item {
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-small;
+    flex: 1;
+}
+
+.reviews__image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.reviews__content {
+    flex: 1;
+}
+
+.reviews__text {
+    font-size: $font-size-base;
+    font-style: italic;
+    line-height: 1.6;
+    color: $black;
+    margin: 0 0 10px 0;
+    padding-top: 10px;
+}
+
+.reviews__author {
+    font-size: $font-size-small;
+    font-weight: normal;
+    color: $black;
+    margin: 0;
+}
