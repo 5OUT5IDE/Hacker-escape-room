@@ -486,7 +486,7 @@ body {
     height: auto;
     min-height: auto;
   }
-  .info-section--reverse {
+  .info-section--worker {
     flex-direction: column-reverse;
   }
   .info-section__image-wrapper, .info-section__content {
