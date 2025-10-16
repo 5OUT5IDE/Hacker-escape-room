@@ -14,25 +14,7 @@
         z-index: 100;
 
         &__nav {
-            position: static;
-            background: $dark-blue;
-            flex-direction: column;
-            gap: 0;
-            padding: 10px 0;
-            max-height: none;
-            overflow: visible;
-            box-shadow: none;
-        }
-
-        &__nav-link {
-            padding: 12px $spacing-small;
-            font-size: $spacing-small;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            display: block;
-
-            &:last-child {
-                border-bottom: none;
-            }
+            display: none;
         }
 
         &__title {

@@ -392,23 +392,7 @@ body {
     z-index: 100;
   }
   .header__nav {
-    position: static;
-    background: #011827;
-    flex-direction: column;
-    gap: 0;
-    padding: 10px 0;
-    max-height: none;
-    overflow: visible;
-    box-shadow: none;
-  }
-  .header__nav-link {
-    padding: 12px 20px;
-    font-size: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    display: block;
-  }
-  .header__nav-link:last-child {
-    border-bottom: none;
+    display: none;
   }
   .header__title {
     font-size: 24px;
