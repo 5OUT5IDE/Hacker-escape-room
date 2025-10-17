@@ -1,4 +1,5 @@
-// Story section
+@use 'variables' as *;
+
 .story {
     background-color: $dark-blue;
     padding: $spacing-large $spacing-medium;
