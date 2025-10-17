@@ -1,4 +1,5 @@
-// Challenges component
+@use 'variables' as *;
+
 .challenges {
     padding: $spacing-large $spacing-medium;
     max-width: $max-width-content;

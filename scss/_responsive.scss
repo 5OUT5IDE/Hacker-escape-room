@@ -1,4 +1,5 @@
-// Responsive styles
+@use 'variables' as *;
+
 @media (max-width: 1280px) {
     .challenges__card {
         width: 320px;

@@ -1,12 +1,13 @@
+@use 'variables' as *;
+@use 'base';
+@use 'buttons';
+@use 'header';
+@use 'banner';
+@use 'reviews';
+@use 'challenges';
+@use 'story';
+@use 'info-section';
+@use 'footer';
+@use 'responsive';
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
-@import 'variables';
-@import 'base';
-@import 'buttons';
-@import 'header';
-@import 'banner';
-@import 'reviews';
-@import 'challenges';
-@import 'story';
-@import 'info-section';
-@import 'footer';
-@import 'responsive';
