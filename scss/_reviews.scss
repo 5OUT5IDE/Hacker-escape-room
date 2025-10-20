@@ -1,4 +1,5 @@
-// Reviews component (flattened for beginners)
+@use 'variables' as *;
+
 .reviews {
     display: flex;
     gap: 30px;
