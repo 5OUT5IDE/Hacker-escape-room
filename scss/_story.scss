@@ -1,39 +1,35 @@
 @use 'variables' as *;
 
 .story {
-    background-color: $dark-blue;
-    padding: $spacing-large $spacing-medium;
-    text-align: center;
+  background-color: $dark-blue;
+  padding: 40px 20px;
+  text-align: center;
+  color: $white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__text {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
     color: $white;
-    width: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    max-width: 100%;
+    text-align: left;
+  }
 
-    &__text {
-        font-size: $font-size-large;
-        line-height: 1.6;
-        margin-bottom: 30px;
-        color: $white;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: left;
-    }
-
-    &__link {
-        color: $light-blue;
-        text-decoration: none;
-        font-size: $font-size-large;
-        font-weight: 700;
-        transition: all $transition-speed;
-        background-color: $dark-blue;
-        border: 2px solid $light-blue;
-        padding: 12px 30px;
-        border-radius: $border-radius;
-        display: inline-block;
-
-    }
+  &__link {
+    color: $light-blue;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    transition: all $transition;
+    background-color: $dark-blue;
+    border: 2px solid $light-blue;
+    padding: 12px 30px;
+    border-radius: 4px;
+    display: inline-block;
+  }
 }

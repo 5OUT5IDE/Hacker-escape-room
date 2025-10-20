@@ -1,4 +1,7 @@
+
 @use 'variables' as *;
+
+@use 'base';
 @use 'buttons';
 @use 'header';
 @use 'banner';
@@ -8,5 +11,3 @@
 @use 'info-section';
 @use 'footer';
 @use 'responsive';
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');

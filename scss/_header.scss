@@ -1,46 +1,39 @@
 @use 'variables' as *;
 
 .header {
-    width: 100%;
-    min-height: 216px;
-    background: $dark-blue;
-    padding: $spacing-small $spacing-medium;
+  width: 100%;
+  min-height: 216px;
+  background: $dark-blue;
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+
+  &__logo-section {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
 
-    &__logo-section {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        margin-bottom: $spacing-small;
-    }
+  &__logo {
+    height: 50px;
+  }
 
-    &__logo {
-        height: 80px;
-    }
+  &__title {
+    color: $white;
+    max-width: 80px;
+    font-size: 32px;
+    line-height: 1.2;
+    text-align: center;
+    margin-top: 10px;
+  }
 
-    &__title {
-        color: $white;
-        font-size: $font-size-h1;
-        margin-top: 10px;
-    }
-
-    &__nav {
-        display: flex;
-        gap: $spacing-xlarge;
-        justify-content: center;
-    }
-
-    &__nav-link {
-        color: $white;
-        text-decoration: none;
-        font-size: 26px;
-        transition: color $transition-speed;
-
-        &:hover {
-            color: $light-blue;
-        }
-    }
+  &__nav {
+    display: none;
+  }
+  &__nav-link {
+    font-weight: bold;
+  }
 }

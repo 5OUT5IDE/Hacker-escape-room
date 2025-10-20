@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -9,8 +8,10 @@ body {
   font-family: "Roboto", sans-serif;
   overflow-x: hidden;
   width: 100%;
-  margin: 0;
-  padding: 0;
+}
+
+.visually-hidden {
+  display: none;
 }
 
 .btn {
@@ -26,27 +27,35 @@ body {
   cursor: pointer;
   transition: opacity 0.3s;
 }
-
 .btn--primary {
   background-color: #E3170A;
   color: #ffffff;
 }
-
 .btn--secondary {
   background-color: #8ACFE5;
   color: #000000;
 }
-
 .btn--lg {
   width: 308px;
   height: 66px;
+}
+.btn--text-mobile {
+  background: none;
+  border: none;
+  padding: 10px 0;
+  width: auto;
+  height: auto;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-size: 18px;
+  color: #36769D;
 }
 
 .header {
   width: 100%;
   min-height: 216px;
   background: #011827;
-  padding: 20px 40px;
+  padding: 20px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,26 +68,21 @@ body {
   margin-bottom: 20px;
 }
 .header__logo {
-  height: 80px;
+  height: 50px;
 }
 .header__title {
   color: #ffffff;
-  font-size: 50px;
+  max-width: 80px;
+  font-size: 32px;
+  line-height: 1.2;
+  text-align: center;
   margin-top: 10px;
 }
 .header__nav {
-  display: flex;
-  gap: 80px;
-  justify-content: center;
+  display: none;
 }
 .header__nav-link {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 26px;
-  transition: color 0.3s;
-}
-.header__nav-link:hover {
-  color: #8ACFE5;
+  font-weight: bold;
 }
 
 .banner {
@@ -87,92 +91,86 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  min-height: 400px;
-  margin: 0;
-  padding: 0;
+  min-height: 300px;
 }
 .banner__image {
   width: 100%;
   height: auto;
-  max-height: 600px;
+  max-height: 300px;
   display: block;
   object-fit: cover;
   object-position: center;
 }
 .banner__buttons {
   position: absolute;
-  bottom: -33px;
+  bottom: -80px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 20px;
+  flex-direction: column-reverse;
+  gap: 10px;
+  align-items: center;
 }
 
 .reviews {
   display: flex;
+  flex-direction: column;
   gap: 30px;
-  justify-content: center;
-  padding: 120px 40px 60px 40px;
+  padding: 100px 20px 40px 20px;
   max-width: 1000px;
   margin: 0 auto;
 }
-
 .reviews__item {
   display: flex;
   align-items: flex-start;
   gap: 20px;
-  flex: 1;
 }
-
 .reviews__image {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
 }
-
 .reviews__content {
   flex: 1;
 }
-
 .reviews__text {
-  font-size: 16px;
+  font-size: 14px;
   font-style: italic;
   line-height: 1.6;
   color: #000000;
   margin: 0 0 10px 0;
-  padding-top: 10px;
 }
-
 .reviews__author {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: normal;
   color: #000000;
   margin: 0;
 }
 
 .challenges {
-  padding: 60px 40px;
+  padding: 40px 20px;
   max-width: 1280px;
   margin: 0 auto;
 }
 .challenges__title {
   text-align: center;
-  font-size: 32px;
+  font-size: 24px;
   margin-bottom: 40px;
   color: #000000;
+  font-weight: normal;
 }
 .challenges__container {
   display: flex;
-  flex-wrap: nowrap;
+  flex-direction: column;
   gap: 30px;
-  justify-content: center;
+  align-items: center;
 }
 .challenges__card {
-  width: 363px;
-  height: 446px;
-  flex-shrink: 0;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   background: #ffffff;
   border-radius: 8px;
@@ -182,13 +180,13 @@ body {
 }
 .challenges__image {
   width: 100%;
-  height: 223px;
+  height: 200px;
   object-fit: cover;
   object-position: center;
 }
 .challenges__card-title {
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: normal;
   margin: 15px 20px 8px 20px;
   color: #000000;
 }
@@ -197,7 +195,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding-right: 0;
 }
 .challenges__stars {
   display: flex;
@@ -224,10 +221,9 @@ body {
   color: #000000;
   margin: 0 0 0 auto;
   white-space: nowrap;
-  line-height: 1;
 }
 .challenges__description {
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.5;
   color: #000000;
   margin: 0 20px 15px 20px;
@@ -237,31 +233,30 @@ body {
 }
 .challenges__btn {
   display: flex;
-  gap: 20px;
+  flex-direction: column-reverse;
+  gap: 15px;
   justify-content: center;
+  align-items: center;
   margin-top: 40px;
 }
 
 .story {
   background-color: #011827;
-  padding: 60px 40px;
+  padding: 40px 20px;
   text-align: center;
   color: #ffffff;
   width: 100%;
-  margin: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .story__text {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.6;
   margin-bottom: 30px;
   color: #ffffff;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 100%;
   text-align: left;
 }
 .story__link {
@@ -279,19 +274,18 @@ body {
 
 .info-section {
   display: flex;
+  flex-direction: column;
   width: 100%;
-  min-height: 500px;
+  min-height: auto;
   margin: 0;
 }
 .info-section--worker {
-  margin-bottom: 100px;
-}
-.info-section--reverse {
-  flex-direction: row-reverse;
+  flex-direction: column-reverse;
+  margin-bottom: 120px;
 }
 .info-section__image-wrapper {
-  width: 50%;
-  min-height: 500px;
+  width: 100%;
+  height: 300px;
   overflow: hidden;
   display: flex;
   align-items: stretch;
@@ -306,22 +300,22 @@ body {
   display: block;
 }
 .info-section__content {
-  width: 50%;
+  width: 100%;
   background-color: #ffffff;
-  padding: 80px 60px;
+  padding: 40px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
 }
 .info-section__title {
-  font-size: 32px;
+  font-size: 24px;
   color: #000000;
   margin-bottom: 20px;
   line-height: 1.3;
 }
 .info-section__text {
-  font-size: 18px;
+  font-size: 16px;
   color: #000000;
   line-height: 1.6;
   margin-bottom: 30px;
@@ -330,32 +324,25 @@ body {
 .footer {
   width: 100%;
   background-color: #011827;
-  padding: 60px 40px 30px 40px;
+  padding: 40px 20px 20px 20px;
   color: #ffffff;
-  margin: 0;
 }
 .footer__container {
   display: flex;
-  justify-content: space-between;
-  max-width: 1280px;
-  margin: 0 auto 40px auto;
-  gap: 60px;
+  flex-direction: column;
+  gap: 30px;
 }
 .footer__column {
   flex: 1;
 }
 .footer__column--main {
-  flex: 2;
-  max-width: 500px;
+  max-width: 100%;
 }
 .footer__heading {
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 15px;
   color: #ffffff;
-}
-.footer__column--main .footer__heading {
-  font-size: 20px;
 }
 .footer__text {
   font-size: 14px;
@@ -378,165 +365,150 @@ body {
   transition: color 0.3s;
 }
 
-@media (max-width: 1280px) {
-  .challenges__card {
-    width: 320px;
-    height: auto;
-    min-height: 400px;
-  }
-}
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .header {
-    padding: 15px 20px;
-    position: relative;
-    z-index: 100;
-  }
-  .header__nav {
-    display: none;
-  }
-  .header__title {
-    font-size: 24px;
+    min-height: 216px;
+    padding: 20px 40px;
   }
   .header__logo {
-    height: 50px;
+    height: 80px;
   }
   .header__title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 32px !important;
-    line-height: 1.3 !important;
-    text-align: center !important;
-    display: block !important;
-  }
-  .header__word {
-    display: block;
-    width: 100%;
-    text-align: center;
-  }
-  .banner {
-    margin-left: 0;
-    margin-right: 0;
-    width: 100%;
-  }
-  .banner__image {
-    max-height: 300px;
-    object-fit: cover;
-  }
-  .banner__buttons {
-    flex-direction: column;
-    gap: 10px;
-    bottom: -80px;
-  }
-  .banner__button {
-    width: 250px;
-    height: 55px;
-    font-size: 16px;
-  }
-  .reviews {
-    flex-direction: column;
-    gap: 30px;
-    padding: 100px 20px 40px 20px;
-  }
-  .reviews__image {
-    width: 60px;
-    height: 60px;
-  }
-  .reviews__text {
-    font-size: 14px;
-  }
-  .reviews__author {
-    font-size: 12px;
-  }
-  .challenges {
-    padding: 40px 20px;
-  }
-  .challenges__title {
-    font-size: 24px;
-  }
-  .challenges__container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .challenges__card {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-  }
-  .challenges__image {
-    height: 200px;
-  }
-  .challenges__card-title {
-    font-size: 18px;
-  }
-  .challenges__description {
-    font-size: 13px;
-  }
-  .story {
-    padding: 40px 20px;
-  }
-  .story__text {
-    font-size: 16px;
-    max-width: 100%;
-  }
-  .info-section {
-    flex-direction: column;
-    height: auto;
-    min-height: auto;
-  }
-  .info-section--worker {
-    flex-direction: column-reverse;
-  }
-  .info-section__image-wrapper, .info-section__content {
-    width: 100%;
-  }
-  .info-section__image-wrapper {
-    height: 300px;
-    min-height: 300px;
-  }
-  .info-section__content {
-    padding: 40px 20px;
-  }
-  .info-section__title {
-    font-size: 24px;
-  }
-  .info-section__text {
-    font-size: 16px;
-  }
-  .info-section__button {
-    width: 100%;
-    max-width: 250px;
-  }
-  .footer {
-    padding: 40px 20px 20px 20px;
-  }
-  .footer__container {
-    flex-direction: column;
-    gap: 30px;
-  }
-  .footer__column--main {
-    max-width: 100%;
-  }
-}
-@media (max-width: 768px) and (max-width: 768px) {
-  .title-container {
-    white-space: normal;
-    text-align: center;
-  }
-  .title-container .header__title {
-    display: block;
-    width: 100%;
-  }
-}
-@media (max-width: 768px) and (min-width: 769px) {
-  .header__title {
-    display: inline;
+    max-width: fit-content;
     font-size: 50px;
     line-height: 1.1;
     text-align: left;
   }
-  .header__word {
-    display: inline;
-    width: auto;
+  .header__nav {
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+  }
+  .header__nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 26px;
+    transition: color 0.3s;
+  }
+  .header__nav-link:hover {
+    color: #8ACFE5;
+  }
+  .banner {
+    min-height: 400px;
+  }
+  .banner__image {
+    max-height: 600px;
+  }
+  .banner__buttons {
+    flex-direction: row;
+    gap: 20px;
+    bottom: -33px;
+  }
+  .reviews {
+    flex-direction: row;
+    gap: 30px;
+    padding: 120px 40px 60px 40px;
+  }
+  .reviews__image {
+    width: 80px;
+    height: 80px;
+  }
+  .reviews__text {
+    font-size: 16px;
+  }
+  .reviews__author {
+    font-size: 14px;
+  }
+  .challenges {
+    padding: 60px 40px;
+  }
+  .challenges__title {
+    font-size: 32px;
+  }
+  .challenges__container {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+  .challenges__card {
+    width: 363px;
+    height: 446px;
+  }
+  .challenges__image {
+    height: 223px;
+  }
+  .challenges__card-title {
+    font-size: 20px;
+  }
+  .challenges__description {
+    font-size: 14px;
+  }
+  .challenges__btn {
+    flex-direction: row;
+    gap: 20px;
+  }
+  .btn--text-mobile {
+    background-color: #E3170A;
+    border: 0;
+    padding: 12px 30px;
+    width: 308px;
+    height: 66px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+  }
+  .story {
+    padding: 60px 40px;
+  }
+  .story__text {
+    font-size: 18px;
+    max-width: 800px;
+  }
+  .info-section {
+    flex-direction: row;
+    min-height: 500px;
+  }
+  .info-section--worker {
+    flex-direction: row;
+  }
+  .info-section--reverse {
+    flex-direction: row-reverse;
+  }
+  .info-section__image-wrapper {
+    width: 50%;
+    height: auto;
+    min-height: 500px;
+  }
+  .info-section__content {
+    width: 50%;
+    padding: 80px 60px;
+  }
+  .info-section__title {
+    font-size: 32px;
+  }
+  .info-section__text {
+    font-size: 18px;
+  }
+  .footer {
+    padding: 60px 40px 30px 40px;
+  }
+  .footer__container {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1280px;
+    margin: 0 auto 40px auto;
+    gap: 60px;
+  }
+  .footer__column--main {
+    flex: 2;
+    max-width: 500px;
   }
 }
+@media (min-width: 1280px) {
+  .challenges__card {
+    width: 320px;
+    min-height: 400px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,105 +1,106 @@
 @use 'variables' as *;
 
 .challenges {
-    padding: $spacing-large $spacing-medium;
-    max-width: $max-width-content;
-    margin: 0 auto;
+  padding: 40px 20px;
+  max-width: 1280px;
+  margin: 0 auto;
 
-    &__title {
-        text-align: center;
-        font-size: $font-size-h2;
-        margin-bottom: $spacing-medium;
-        color: $black;
+  &__title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 40px;
+    color: $black;
+    font-weight: normal;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  &__card {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    background: $white;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__card-title {
+    font-size: 18px;
+    font-weight: normal;
+    margin: 15px 20px 8px 20px;
+    color: $black;
+  }
+
+  &__rating {
+    margin: 0 5px 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  &__stars {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+
+  &__star {
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+
+    &--filled {
+      background-image: url("../imgs/filledstar.svg");
     }
 
-    &__container {
-        display: flex;
-        flex-wrap: nowrap;
-        gap: 30px;
-        justify-content: center;
+    &--empty {
+      background-image: url("../imgs/emptystar.svg");
     }
+  }
 
-    &__card {
-        width: 363px;
-        height: 446px;
-        flex-shrink: 0;
-        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-        background: $white;
-        border-radius: $border-radius-large;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-    }
+  &__participants {
+    font-size: 14px;
+    font-weight: normal;
+    color: $black;
+    margin: 0 0 0 auto;
+    white-space: nowrap;
+  }
 
-    &__image {
-        width: 100%;
-        height: 223px;
-        object-fit: cover;
-        object-position: center;
-    }
+  &__description {
+    font-size: 13px;
+    line-height: 1.5;
+    color: $black;
+    margin: 0 20px 15px 20px;
+  }
 
-    &__card-title {
-        font-size: $font-size-h3;
-        font-weight: 700;
-        margin: 15px $spacing-small 8px $spacing-small;
-        color: $black;
-    }
+  &__button {
+    margin: 0 20px 20px auto;
+  }
 
-    &__rating {
-        margin: 0 5px 10px $spacing-small;
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        padding-right: 0;
-    }
-
-    &__stars {
-        display: flex;
-        gap: 4px;
-        align-items: center;
-    }
-
-    &__star {
-        width: 20px;
-        height: 20px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        display: inline-block;
-
-        &--filled {
-            background-image: url('../imgs/filledstar.svg');
-        }
-
-        &--empty {
-            background-image: url('../imgs/emptystar.svg');
-        }
-    }
-
-    &__participants {
-        font-size: $font-size-small;
-        font-weight: normal;
-        color: $black;
-        margin: 0 0 0 auto;
-        white-space: nowrap;
-        line-height: 1;
-    }
-
-    &__description {
-        font-size: $font-size-small;
-        line-height: 1.5;
-        color: $black;
-        margin: 0 $spacing-small 15px $spacing-small;
-    }
-
-    &__button {
-        margin: 0 $spacing-small $spacing-small auto;
-    }
-
-    &__btn {
-        display: flex;
-        gap: $spacing-small;
-        justify-content: center;
-        margin-top: $spacing-medium;
-    }
+  &__btn {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+  }
 }
