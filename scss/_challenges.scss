@@ -67,11 +67,11 @@
         display: inline-block;
 
         &--filled {
-            background-image: url('../imgs/filledstar.png');
+            background-image: url('../imgs/filledstar.svg');
         }
 
         &--empty {
-            background-image: url('../imgs/emptystar.png');
+            background-image: url('../imgs/emptystar.svg');
         }
     }
 

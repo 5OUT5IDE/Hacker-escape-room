@@ -213,10 +213,10 @@ body {
   display: inline-block;
 }
 .challenges__star--filled {
-  background-image: url("../imgs/filledstar.png");
+  background-image: url("../imgs/filledstar.svg");
 }
 .challenges__star--empty {
-  background-image: url("../imgs/emptystar.png");
+  background-image: url("../imgs/emptystar.svg");
 }
 .challenges__participants {
   font-size: 14px;
@@ -504,5 +504,3 @@ body {
     max-width: 100%;
   }
 }
-
-/*# sourceMappingURL=main.css.map */
