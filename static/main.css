@@ -1,3 +1,4 @@
+/* ===== RESET & BASE STYLES ===== */
 * {
   margin: 0;
   padding: 0;
@@ -8,12 +9,22 @@ body {
   font-family: "Roboto", sans-serif;
   overflow-x: hidden;
   width: 100%;
+  background: #011827;
+}
+
+.page-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  background: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 .visually-hidden {
   display: none;
 }
 
+/* ===== BUTTON COMPONENTS ===== */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -43,23 +54,21 @@ body {
   background: none;
   border: none;
   padding: 10px 0;
-  width: auto;
-  height: auto;
   text-decoration: underline;
   text-underline-offset: 4px;
   font-size: 18px;
   color: #36769D;
 }
 
+/* ===== HEADER SECTION ===== */
 .header {
   width: 100%;
   min-height: 216px;
   background: #011827;
-  padding: 20px 20px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: relative;
 }
 .header__logo-section {
   display: flex;
@@ -80,11 +89,30 @@ body {
 }
 .header__nav {
   display: none;
+  margin-left: 200px;
+}
+.header__nav ul {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  list-style: none;
+  gap: 32px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
 .header__nav-link {
-  font-weight: bold;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 700;
+  transition: color 0.3s;
+}
+.header__nav-link:hover {
+  color: #8ACFE5;
 }
 
+/* ===== BANNER SECTION ===== */
 .banner {
   width: 100%;
   position: relative;
@@ -97,7 +125,6 @@ body {
   width: 100%;
   height: auto;
   max-height: 300px;
-  display: block;
   object-fit: cover;
   object-position: center;
 }
@@ -112,18 +139,24 @@ body {
   align-items: center;
 }
 
+/* ===== REVIEWS SECTION ===== */
 .reviews {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding: 100px 20px 40px 20px;
+  padding: 40px 20px;
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 100px auto 0;
+  background: white;
 }
 .reviews__item {
   display: flex;
   align-items: flex-start;
   gap: 20px;
+  width: 100%;
+}
+.reviews__item:nth-child(2) {
+  display: none;
 }
 .reviews__image {
   width: 60px;
@@ -149,10 +182,12 @@ body {
   margin: 0;
 }
 
+/* ===== CHALLENGES SECTION ===== */
 .challenges {
   padding: 40px 20px;
   max-width: 1280px;
   margin: 0 auto;
+  overflow: hidden;
 }
 .challenges__title {
   text-align: center;
@@ -163,13 +198,17 @@ body {
 }
 .challenges__container {
   display: flex;
-  flex-direction: column;
   gap: 30px;
-  align-items: center;
+  align-items: flex-start;
+  width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
 }
 .challenges__card {
-  width: 100%;
+  width: calc(100% - 40px);
   max-width: 400px;
+  min-width: 280px;
   height: auto;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   background: #ffffff;
@@ -177,6 +216,8 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
+  scroll-snap-align: start;
 }
 .challenges__image {
   width: 100%;
@@ -187,7 +228,7 @@ body {
 .challenges__card-title {
   font-size: 18px;
   font-weight: normal;
-  margin: 15px 20px 8px 20px;
+  margin: 15px 20px 8px;
   color: #000000;
 }
 .challenges__rating {
@@ -207,7 +248,6 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  display: inline-block;
 }
 .challenges__star--filled {
   background-image: url("../imgs/filledstar.svg");
@@ -226,7 +266,7 @@ body {
   font-size: 13px;
   line-height: 1.5;
   color: #000000;
-  margin: 0 20px 15px 20px;
+  margin: 0 20px 15px;
 }
 .challenges__button {
   margin: 0 20px 20px auto;
@@ -240,6 +280,7 @@ body {
   margin-top: 40px;
 }
 
+/* ===== STORY SECTION ===== */
 .story {
   background-color: #011827;
   padding: 40px 20px;
@@ -257,7 +298,8 @@ body {
   margin-bottom: 30px;
   color: #ffffff;
   max-width: 100%;
-  text-align: left;
+  text-align: center;
+  font-weight: 400;
 }
 .story__link {
   color: #8ACFE5;
@@ -272,6 +314,7 @@ body {
   display: inline-block;
 }
 
+/* ===== INFO SECTIONS ===== */
 .info-section {
   display: flex;
   flex-direction: column;
@@ -281,7 +324,7 @@ body {
 }
 .info-section--worker {
   flex-direction: column-reverse;
-  margin-bottom: 120px;
+  margin-bottom: 40px;
 }
 .info-section__image-wrapper {
   width: 100%;
@@ -297,7 +340,6 @@ body {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  display: block;
 }
 .info-section__content {
   width: 100%;
@@ -321,10 +363,11 @@ body {
   margin-bottom: 30px;
 }
 
+/* ===== FOOTER SECTION ===== */
 .footer {
   width: 100%;
   background-color: #011827;
-  padding: 40px 20px 20px 20px;
+  padding: 40px 20px 20px;
   color: #ffffff;
 }
 .footer__container {
@@ -365,9 +408,21 @@ body {
   transition: color 0.3s;
 }
 
+/* ===== MOBILE ENHANCEMENTS ===== */
+@media (max-width: 767px) {
+  .challenges__container {
+    padding-right: 20px;
+  }
+  .challenges__card:first-child {
+    margin-left: 20px;
+  }
+  .challenges__card:last-child {
+    margin-right: 20px;
+  }
+}
+/* ===== TABLET STYLES ===== */
 @media (min-width: 768px) {
   .header {
-    min-height: 216px;
     padding: 20px 40px;
   }
   .header__logo {
@@ -381,17 +436,6 @@ body {
   }
   .header__nav {
     display: flex;
-    gap: 80px;
-    justify-content: center;
-  }
-  .header__nav-link {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 26px;
-    transition: color 0.3s;
-  }
-  .header__nav-link:hover {
-    color: #8ACFE5;
   }
   .banner {
     min-height: 400px;
@@ -406,8 +450,10 @@ body {
   }
   .reviews {
     flex-direction: row;
-    gap: 30px;
-    padding: 120px 40px 60px 40px;
+    padding: 60px 40px;
+  }
+  .reviews__item:nth-child(2) {
+    display: flex;
   }
   .reviews__image {
     width: 80px;
@@ -426,9 +472,8 @@ body {
     font-size: 32px;
   }
   .challenges__container {
-    flex-direction: row;
-    flex-wrap: nowrap;
     justify-content: center;
+    overflow-x: visible;
   }
   .challenges__card {
     width: 363px;
@@ -476,7 +521,6 @@ body {
   }
   .info-section__image-wrapper {
     width: 50%;
-    height: auto;
     min-height: 500px;
   }
   .info-section__content {
@@ -490,13 +534,13 @@ body {
     font-size: 18px;
   }
   .footer {
-    padding: 60px 40px 30px 40px;
+    padding: 60px 40px 30px;
   }
   .footer__container {
     flex-direction: row;
     justify-content: space-between;
     max-width: 1280px;
-    margin: 0 auto 40px auto;
+    margin: 0 auto 40px;
     gap: 60px;
   }
   .footer__column--main {
@@ -504,7 +548,74 @@ body {
     max-width: 500px;
   }
 }
+/* ===== DESKTOP STYLES ===== */
 @media (min-width: 1280px) {
+  .page-container {
+    width: 1280px;
+    min-height: 3640px;
+  }
+  .header__logo {
+    width: 128px;
+    height: 82px;
+  }
+  .header__title {
+    width: 404px;
+    height: 47px;
+    font-size: 40px;
+  }
+  .story {
+    width: 1280px;
+    height: 500px;
+    position: absolute;
+    top: 1889px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .story__text {
+    font-size: 28px;
+    line-height: 100%;
+    position: absolute;
+    top: 123px;
+    left: 324px;
+    width: 632px;
+    height: 169px;
+  }
+  .story__link {
+    position: absolute;
+    top: 292px;
+    left: 486px;
+    width: 308px;
+    height: 66px;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 19px;
+  }
+  .info-section--friends {
+    position: absolute;
+    top: 2390px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1280px;
+  }
+  .info-section--worker {
+    position: absolute;
+    top: 2890px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1280px;
+  }
+  .info-section--worker .info-section__content {
+    padding-bottom: 0;
+  }
+  .footer {
+    position: absolute;
+    top: 3440px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1280px;
+  }
   .challenges__card {
     width: 320px;
     min-height: 400px;

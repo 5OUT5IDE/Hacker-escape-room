@@ -4,8 +4,9 @@
   "description": "Escape room",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "sass scss/main.scss static/main.css",
-    "sass:watch": "sass --watch scss/main.scss:static/main.css"
+  "compile:sass": "sass scss/main.scss static/main.css",
+  "sass:watch": "sass --watch scss/main.scss:static/main.css",
+  "watch:sass": "sass --watch scss/main.scss static/main.css"
   },
   "repository": {
     "type": "git",
