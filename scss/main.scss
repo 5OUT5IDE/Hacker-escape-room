@@ -750,6 +750,10 @@ body {
   display: none;
 }
 
+.hamburger.hidden {
+  display: none;
+}
+
 .mobile-menu {
   display: none;
   position: fixed;
@@ -766,18 +770,18 @@ body {
 
   &__nav {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80vw;
-    height: 80vh;
-    background-color: #011827;
+    top: 5vh;
+    left: 5vw;
+    width: 90vw;
+    height: 90vh;
+    background: #011827;
     box-shadow: 0px 0px 20px 0px #00000066;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 30px;
 
     .mobile-menu__close {
       position: absolute;

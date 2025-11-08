@@ -14,10 +14,10 @@ document.addEventListener('DOMContentLoaded', function() {
     menuList.setAttribute('class', 'mobile-menu__list');
 
     const menuItems = [
-        { text: 'Play Online', href: '#' },
-        { text: 'Play On-site', href: '#' },
+        { text: 'Play online', href: '#' },
+        { text: 'Play on-site', href: '#' },
         { text: 'The story', href: '#' },
-        { text: 'Contact Us', href: '#' }
+        { text: 'Contact ', href: '#' }
     ];
 
     menuItems.forEach(function(item) {
@@ -51,10 +51,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (opacity <= 0) {
                     clearInterval(fadeOut);
                     menuOverlay.classList.remove('active');
+                    menuButton.classList.remove('hidden');
                 }
             }, 30);
         } else {
             menuOverlay.classList.add('active');
+            menuButton.classList.add('hidden');
             let opacity = 0;
             const fadeIn = setInterval(function() {
                 opacity = opacity + 0.1;
