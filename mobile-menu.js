@@ -1,24 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
     const menuButton = document.createElement('button');
-    menuButton.setAttribute('class', 'menu-toggle');
+    menuButton.setAttribute('class', 'hamburger');
     menuButton.setAttribute('aria-label', 'Toggle menu');
-    menuButton.innerHTML = '☰';
 
     const menuOverlay = document.createElement('div');
-    menuOverlay.setAttribute('class', 'menu-overlay');
+    menuOverlay.setAttribute('class', 'mobile-menu');
     menuOverlay.setAttribute('id', 'menu-overlay');
     menuOverlay.style.opacity = '0';
 
-    const menuContent = document.createElement('div');
-    menuContent.setAttribute('class', 'menu-content');
-
-    const closeButton = document.createElement('button');
-    closeButton.setAttribute('class', 'menu-close');
-    closeButton.setAttribute('aria-label', 'Close menu');
-    closeButton.innerHTML = '×';
+    const menuContent = document.createElement('nav');
+    menuContent.setAttribute('class', 'mobile-menu__nav');
 
     const menuList = document.createElement('ul');
-    menuList.setAttribute('class', 'menu-list');
+    menuList.setAttribute('class', 'mobile-menu__list');
 
     const menuItems = [
         { text: 'Play Online', href: '#' },
@@ -31,12 +25,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const li = document.createElement('li');
         const a = document.createElement('a');
         a.setAttribute('href', item.href);
+        a.setAttribute('class', 'mobile-menu__link');
         a.textContent = item.text;
         li.appendChild(a);
         menuList.appendChild(li);
     });
 
-    menuContent.appendChild(closeButton);
     menuContent.appendChild(menuList);
     menuOverlay.appendChild(menuContent);
 
@@ -52,12 +46,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (opacity <= 0) {
                     clearInterval(fadeOut);
                     menuOverlay.classList.remove('active');
-                    menuOverlay.style.display = 'none';
+                    menuButton.classList.remove('open');
                 }
             }, 30);
         } else {
-            menuOverlay.style.display = 'flex';
             menuOverlay.classList.add('active');
+            menuButton.classList.add('open');
             let opacity = 0;
             const fadeIn = setInterval(function() {
                 opacity = opacity + 0.1;
@@ -67,11 +61,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }, 30);
         }
-        document.body.classList.toggle('menu-open');
     }
 
     menuButton.addEventListener('click', toggleMenu);
-    closeButton.addEventListener('click', toggleMenu);
 
     menuOverlay.addEventListener('click', function(e) {
         if (e.target === menuOverlay) {
