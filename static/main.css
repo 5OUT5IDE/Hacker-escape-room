@@ -69,6 +69,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 }
 .header__logo-section {
   display: flex;
@@ -624,7 +625,7 @@ body {
 /* ===== MOBILE MENU ===== */
 .hamburger {
   display: none;
-  position: fixed;
+  position: absolute;
   top: 20px;
   right: 20px;
   background: none;

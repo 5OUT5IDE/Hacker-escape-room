@@ -73,6 +73,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 
   &__logo-section {
     display: flex;
@@ -729,7 +730,7 @@ body {
 
 .hamburger {
   display: none;
-  position: fixed;
+  position: absolute;
   top: 20px;
   right: 20px;
   background: none;

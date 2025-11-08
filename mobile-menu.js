@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
     menuOverlay.appendChild(menuContent);
 
     document.body.appendChild(menuOverlay);
-    document.body.appendChild(menuButton);
+    document.querySelector('.header').appendChild(menuButton);
 
     function toggleMenu() {
         if (menuOverlay.classList.contains('active')) {
