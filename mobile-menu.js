@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const menuOverlay = document.createElement('div');
     menuOverlay.setAttribute('class', 'mobile-menu');
-    menuOverlay.setAttribute('id', 'menu-overlay');
     menuOverlay.style.opacity = '0';
 
     const menuContent = document.createElement('nav');
@@ -32,10 +31,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     menuContent.appendChild(menuList);
+
+    const closeButton = document.createElement('button');
+    closeButton.className = 'mobile-menu__close';
+    closeButton.setAttribute('aria-label', 'Close menu');
+    menuContent.appendChild(closeButton);
+
     menuOverlay.appendChild(menuContent);
 
-    document.body.appendChild(menuButton);
     document.body.appendChild(menuOverlay);
+    document.body.appendChild(menuButton);
 
     function toggleMenu() {
         if (menuOverlay.classList.contains('active')) {
@@ -46,12 +51,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (opacity <= 0) {
                     clearInterval(fadeOut);
                     menuOverlay.classList.remove('active');
-                    menuButton.classList.remove('open');
                 }
             }, 30);
         } else {
             menuOverlay.classList.add('active');
-            menuButton.classList.add('open');
             let opacity = 0;
             const fadeIn = setInterval(function() {
                 opacity = opacity + 0.1;
@@ -64,6 +67,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     menuButton.addEventListener('click', toggleMenu);
+
+    closeButton.addEventListener('click', toggleMenu);
 
     menuOverlay.addEventListener('click', function(e) {
         if (e.target === menuOverlay) {
